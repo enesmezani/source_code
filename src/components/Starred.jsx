@@ -6,10 +6,14 @@ import '../styles/starred.scss'
 
 const Starred = ({viewTrailer}) => {
 
-    const state = useSelector((state) => state)
-    const { starred } = state
-    const { clearAllStarred } = starredSlice.actions
-    const dispatch = useDispatch()
+  const starred = useSelector((state) => state.starred)
+  const { clearAllStarred } = starredSlice.actions
+  const dispatch = useDispatch()
+
+  if (!starred || !starred.starredMovies) 
+  {
+    return <p>Error: Unable to load starred movies.</p>;
+  }
 
   return (
     <div className="starred" data-testid="starred">
@@ -17,11 +21,10 @@ const Starred = ({viewTrailer}) => {
         <h6 className="header">Starred movies</h6>
         <div className="row">
         {starred.starredMovies.map((movie) => (
-          <Movie 
-            movie={movie} 
-            key={movie.id}
-            viewTrailer={viewTrailer}
-          />
+          <div className="movie" key={movie.id}>
+            <Movie movie={movie} viewTrailer={viewTrailer} />
+            <span className="star-icon">⭐</span>
+          </div>
         ))}
         </div>
 
