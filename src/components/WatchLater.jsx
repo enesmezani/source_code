@@ -24,7 +24,6 @@ const WatchLater = ({viewTrailer}) => {
             {watchLater.watchLaterMovies.map((movie) => (
               <div className="movie" key={movie.id}>
                 <Movie movie={movie} viewTrailer={viewTrailer} />
-                <span className="clock-icon" style={{ marginLeft: '8px' }}>⏰ </span>
               </div>
             ))}
           </div>

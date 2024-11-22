@@ -23,7 +23,6 @@ const Starred = ({viewTrailer}) => {
         {starred.starredMovies.map((movie) => (
           <div className="movie" key={movie.id}>
             <Movie movie={movie} viewTrailer={viewTrailer} />
-            <span className="star-icon">⭐</span>
           </div>
         ))}
         </div>
