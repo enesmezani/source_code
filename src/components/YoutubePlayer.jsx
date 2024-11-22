@@ -1,7 +1,6 @@
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
 
-const YoutubePlayer = ({ videoKey }) => {
-  
+const YouTubePlayer = ({ videoKey }) => {
   if (!videoKey) {
     return <p>Error: Invalid video key.</p>;
   }
@@ -17,4 +16,4 @@ const YoutubePlayer = ({ videoKey }) => {
   );
 };
 
-export default YoutubePlayer;
+export default YouTubePlayer;
