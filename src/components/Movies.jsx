@@ -1,5 +1,6 @@
 import Movie from './Movie'
 import '../styles/movies.scss'
+import styles from './movies.module.scss'
 
 const Movies = ({ movies, viewTrailer, closeCard }) => {
 
@@ -11,7 +12,7 @@ const Movies = ({ movies, viewTrailer, closeCard }) => {
     }
 
     return (
-        <div data-testid="movies">
+        <div className='movies' data-testid="movies">
             {movieList.map((movie) => {
                 return (
                     <Movie 

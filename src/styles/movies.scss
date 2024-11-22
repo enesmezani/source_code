@@ -11,6 +11,15 @@
         text-decoration: none;
     }
 
+    .movies {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+
+        .wrapper {
+            width: 100%;
+        }
+    }
+
     .wrapper {
         padding: 0 6px;
         margin-bottom: 2rem;
