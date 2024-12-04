@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Routes, Route, createSearchParams, useSearchParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import 'reactjs-popup/dist/index.css';
@@ -10,13 +10,15 @@ import Starred from './components/Starred';
 import WatchLater from './components/WatchLater';
 import YouTubePlayer from './components/YoutubePlayer';
 import './app.scss';
+import useTest from './hooks/useTest';
+import BottomReached from './components/BottomReached';
 
 const App = () => {
-  const state = useSelector((state) => state);
-  const { movies } = state;
+  const movies = useSelector((state) => state.movies);
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('search');
+  const {getNextPage} = useTest()
   const [videoKey, setVideoKey] = useState();
   const [isOpen, setOpen] = useState(false);
   const navigate = useNavigate();
@@ -44,7 +46,7 @@ const App = () => {
     if (searchQuery) {
       dispatch(fetchMovies(`${ENDPOINT_SEARCH}&query=` + searchQuery));
     } else {
-      dispatch(fetchMovies(ENDPOINT_DISCOVER));
+      dispatch(fetchMovies(`${ENDPOINT_DISCOVER}`));
     }
   };
 
@@ -76,7 +78,12 @@ const App = () => {
         <Routes>
           <Route
             path="/"
-            element={<Movies movies={movies} viewTrailer={viewTrailer} closeCard={closeCard} />}
+            element={
+              <div>
+                <Movies movies={movies} viewTrailer={viewTrailer} closeCard={closeCard} />
+                <BottomReached onView={getNextPage} />
+              </div>
+              }
           />
           <Route path="/starred" element={<Starred viewTrailer={viewTrailer} />} />
           <Route path="/watch-later" element={<WatchLater viewTrailer={viewTrailer} />} />
