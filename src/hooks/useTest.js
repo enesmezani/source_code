@@ -4,17 +4,17 @@ import { useRef, useState } from "react";
 import { ENDPOINT_DISCOVER } from "../constants";
 
 const useTest = () => {
-    const dispatch = useDispatch();
-    const page = useRef(1);
-    
-    const getNextPage = () => {
-        page.current = page.current + 1;
-        dispatch(fetchMovies(`${ENDPOINT_DISCOVER}&page=${page.current}`));
-    }
+  const dispatch = useDispatch();
+  const page = useRef(1);
 
-    return {
-        getNextPage
-    }
-}
+  const getNextPage = () => {
+    page.current = page.current + 1;
+    dispatch(fetchMovies(`${ENDPOINT_DISCOVER}&page=${page.current}`));
+  };
 
-export default useTest
+  return {
+    getNextPage,
+  };
+};
+
+export default useTest;

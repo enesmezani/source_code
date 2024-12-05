@@ -1,52 +1,52 @@
 .starred {
-    .movies-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+  .movies-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 
-        .wrapper {
-            width: 100%;
-        }
-    }
-  
-    .movie-item {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 16px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-  
-    .movie-item img {
+    .wrapper {
       width: 100%;
-      height: auto;
-      border-radius: 8px;
-    }
-  
-    .movie-item h2 {
-      font-size: 1.25rem;
-      margin: 8px 0;
-    }
-  
-    .movie-item p {
-      font-size: 1rem;
-      color: #666;
-    }
-  
-    .header {
-      text-align: center;
-      margin-bottom: 16px;
-    }
-  
-    .empty-cart {
-      text-align: center;
-      margin-top: 20px;
-    }
-  
-    .btn-primary {
-      margin-top: 20px;
-      width: 14% !important;
-      height: 38% !important;
-      font-size: 16px;
     }
   }
+
+  .movie-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .movie-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .movie-item h2 {
+    font-size: 1.25rem;
+    margin: 8px 0;
+  }
+
+  .movie-item p {
+    font-size: 1rem;
+    color: #666;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .empty-cart {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .btn-primary {
+    margin-top: 20px;
+    width: 14% !important;
+    height: 38% !important;
+    font-size: 16px;
+  }
+}
